@@ -22,7 +22,7 @@ public class Crash : NetworkBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(!collision.gameObject.CompareTag("Spaceship"))
+        if (!collision.gameObject.CompareTag("Spaceship"))
         {
             Debug.Log("Velocity: " + initialSpeed);
             if (initialSpeed > ImpactCapacity)
@@ -34,9 +34,9 @@ public class Crash : NetworkBehaviour
         }
         else
         {
-                Debug.Log("Crash!");
-                explosion.SetActive(true);
-                StartCoroutine(GrowExplosion());
+            Debug.Log("Crash!");
+            explosion.SetActive(true);
+            StartCoroutine(GrowExplosion());
         }
 
     }

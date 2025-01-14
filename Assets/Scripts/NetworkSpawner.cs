@@ -24,7 +24,7 @@ public class SpawningLauncher : EmptyLauncher
             // Create a unique position for the player
             //Vector3 spawnPosition = spawnPoints[player.AsIndex % spawnPoints.Length].position;
             //Vector3 spawnPosition2 = new Vector3((float)6.86, (float)-1, player.AsIndex);
-            Vector3 spawnPosition2 = new Vector3((float)6.18 - ((player.AsIndex-1) * 14), (float)-1, player.AsIndex);
+            Vector3 spawnPosition2 = new Vector3((float)6.18 - ((player.AsIndex - 1) * 14), (float)-1, player.AsIndex);
             //new Vector3((player.RawEncoded % runner.Config.Simulation.PlayerCount) * 3, 0, 0);
             NetworkObject networkPlayerObject = runner.Spawn(_playerPrefab, spawnPosition2, Quaternion.identity, /*input authority:*/ player);
             // Keep track of the player avatars for easy access
@@ -43,8 +43,8 @@ public class SpawningLauncher : EmptyLauncher
     }
 
     [SerializeField] InputAction moveAction = new InputAction(type: InputActionType.Button);
-    private void OnEnable() { moveAction.Enable();}
-    private void OnDisable() { moveAction.Disable();}
+    private void OnEnable() { moveAction.Enable(); }
+    private void OnDisable() { moveAction.Disable(); }
     void OnValidate()
     {
         // Provide default bindings for the input actions. Based on answer by DMGregory: https://gamedev.stackexchange.com/a/205345/18261
